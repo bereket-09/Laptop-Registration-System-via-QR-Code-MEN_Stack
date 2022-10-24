@@ -1,0 +1,143 @@
+<%- include ("include/_header") %> 
+  <!-- Content Wrapper. Contains page content -->
+ <!-- <%= JSON.stringify(data)  %>  -->
+
+  <div class="container-fluid py-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card my-4">
+          <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+            <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+              <a class="btn bg-gradient-success float-right" style="float: right;margin-bottom: 12px;margin-right: 15px;" href="/add-new">ADD New</a>
+              <h6 class="text-white text-capitalize ps-3">All Laptops List 
+                
+                              
+              </h6>
+
+              
+            </div>
+          </div>
+          <div class="card-body px-0 pb-2">
+            <div class="table-responsive p-0">
+              <table class="table align-items-center mb-0" id="myTable" class="display">
+                <thead>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Full Name</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">UserType</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">serialNumber</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Model</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Color</th>
+                    <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Year</th> -->
+                    <!-- <th class="text-secondary opacity-7"></th> -->
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actions</th>
+                    <th class="text-secondary opacity-7"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for( var i = 0; i < data.length; i++ ) { %>
+                  
+                  
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div>
+                          <!-- <img src="../Images/avatar.png" class="avatar avatar-sm me-3 border-radius-lg" alt="img" width=”50″ height=”60″> -->
+                            <!-- <img src="/public/Images/avatar.png" alt="no image" width=”500″ height=”600″> -->
+                          <!-- <img id="currentPhoto" class="avatar avatar-sm me-3 border-radius-lg" src="/Images/avatar.png" onerror="this.src='/Images/<%= data[i].profile %>'" alt=""> -->
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm"><%= data[i].name%></h6>
+                          <p class="text-xs text-secondary mb-0"><%= data[i].dept%> Departement @ <%= data[i].year%> Year</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="text-xs font-weight-bold mb-0"><%= data[i].userType%></p> 
+                      
+                    </td>
+                  </td>
+                  <td class="align-middle text-center">
+                    <b>
+                    <h2 class="text-xs font-weight-bold mb-0"><%= data[i].serialNumber%></h2> </b>
+                    
+                  </td>
+                    <!-- <td class="align-right text-center text-sm">
+                      <span class="badge badge-sm bg-gradient-success">Online</span>
+                    </td> -->
+                    <td class="align-middle text-center">
+                      <span class="text-secondary text-xs font-weight-bold"><%= data[i].model%></span>
+                    </td>
+                    <td class="align-middle text-center">
+                      <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <%= data[i].color%>
+                      </a>
+                    </td>
+                    <td class="align-middle text-center">
+                      <a href="/update/<%= data[i]._id%> " class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        Edit
+                      </a>
+                      <a href="/delete/<%= data[i]._id%>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user" style="margin-left: 12px;" onclick="return confirm('Are you sure you want to delete this item?')">
+                        Delete
+                      </a>
+                    </td>
+                    
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <img src="../Images/1653098285669.png" alt=""> 
+    <!-- <footer class="footer py-4  ">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6 mb-lg-0 mb-4">
+            <div class="copyright text-center text-sm text-muted text-lg-start">
+              © <script>
+                document.write(new Date().getFullYear())
+              </script>2022,
+              made with <i class="fa fa-heart" aria-hidden="true"></i> by
+              <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+              for a better web.
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+              <li class="nav-item">
+                <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+              </li>
+              <li class="nav-item">
+                <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+  </div>
+
+
+    
+  </div> -->
+  <script type="text/javascript">$(document).ready( function () {
+    $('#table_id').DataTable();
+  } );
+  </script>
+  <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
+  <%- include ("include/_footer") %> 
+
+  <!-- /.content-wrapper -->
+
+

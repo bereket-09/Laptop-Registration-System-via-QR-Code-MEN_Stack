@@ -1,0 +1,115 @@
+<%- include ("include/_header") %> 
+  <!-- Content Wrapper. Contains page content -->
+ 
+
+  <!-- <div class="card"> -->
+          <div class="container-fluid pt-4 px-4 py-4">
+            <div class="row g-12">
+              <div class="card pd-5">
+                
+                <div class="col-sm-12 col-xl-12-15" style="padding: 150px;padding-top: 5px;">
+                    <div class=" rounded h-100 p-4"><center>
+                        <h2 class="mb-4">Add New Entery</h2></center>
+                        <form method="post" action="/add-new"  id="add_pc" >
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Owner's Full Name</label>
+                                <input type="text" class=" form-control" name="name" style="border-bottom:2px solid #ccc!important"   id="exampleInputEmail1"  aria-describedby="emailHelp"value="">
+                                <div id="emailHelp" class="form-text">Please Enter Full Name as displayed on ID.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                              <label for="Idnumber" class="form-label">ID Number</label>
+                              <input type="text" class=" form-control" style="border-bottom:2px solid #ccc!important"   id="exampleInputEmail1"  aria-describedby="emailHelp" name="idNo">
+                              <div id="emailHelp" class="form-text">You can also use natioanl ID.
+                              </div>
+                          </div>
+                            <div class="form-floating mb-3">
+                              <select class="form-select" id="floatingSelect" style="border-bottom:2px solid #ccc!important" aria-label="Floating label select example" name="userType" required>
+                                  <option selected disabled>Type of User</option>
+                                  <option value="Student">Student</option>
+                                  <option value="Staff">Staff</option>
+                                  <option value="Other">Other</option>
+                              </select>
+                              <label for="floatingSelect">Choose Owner Type</label>
+                          </div>
+                          
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Departement</label>
+                                <input type="text" class="form-control" style="border-bottom:2px solid #ccc!important"  id="exampleInputPassword1" name="dept">
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputPassword1" class="form-label">year</label>
+                              <input type="number" class="form-control" style="border-bottom:2px solid #ccc!important"  id="exampleInputPassword1" name="year">
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Phone Number</label>
+                            <input type="phone" class="form-control" style="border-bottom:2px solid #ccc!important"  id="exampleInputPassword1" name="phone">
+                        </div>
+                        <div class="mb-3">
+                          <label for="Image" class="form-label">Owner Photo </label>
+                          <input class="form-control" type="file" id="formFile" onchange="preview()">
+                          <!-- <button onclick="clearImage()" class="btn btn-primary mt-3">Click me</button> -->
+                          <img id="frame" src="" class="img-fluid" />
+                      </div>
+                     
+                  <!-- </div> -->
+          
+                 
+
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Computer Model</label>
+                          <input type="text" class="form-control" style="border-bottom:2px solid #ccc!important"  id="exampleInputPassword1" name="model">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">SerialNumber</label>
+                        <input type="text" class="form-control" style="border-bottom:2px solid #ccc!important"  id="exampleInputPassword1" name="serialNumber" minlength="6">
+                    </div>
+
+                    <div class="form-floating mb-5">
+                      <select class="form-select" id="floatingSelect" style="border-bottom:2px solid #ccc!important" aria-label="Floating label select example" name="color">
+                          <option selected disabled>Select PC color</option>
+                          <option value="Silver">Silver</option>
+                          <option value="Black">Black</option>
+                          <option value="White">White</option>
+                          <option value="red">red</option>
+                          <option value="blue">blue</option>
+                          <option value="Other">Other (Not listed Above)</option>
+                      </select>
+                      <label for="floatingSelect">Computer Color</label>
+                  </div>
+
+                      
+                      <center>
+                            <input type="submit" class="btn btn-primary" value="Add Entry" style="padding: 20px;"></input></center>
+                        </form>
+                    </div>
+                </div>
+              
+            
+            </div>
+          </div>
+          </div>
+       
+        
+
+        
+  <!-- </div>
+
+  
+  </div> --> -->
+  <script>
+    function preview() {
+        frame.src = URL.createObjectURL(event.target.files[0]);
+    }
+    function clearImage() {
+        document.getElementById('formFile').value = null;
+        frame.src = "";
+    }
+</script>
+  
+  <%- include ("include/_footer") %> 
+
+  <!-- /.content-wrapper -->
+
+
