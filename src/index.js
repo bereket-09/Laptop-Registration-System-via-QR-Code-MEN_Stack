@@ -13,6 +13,8 @@ var serial = "";
 const { auth, requiresAuth } = require("express-openid-connect");
 const QRCode = require("qrcode");
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 const config = {
   authRequired: false,
@@ -76,8 +78,8 @@ app.get("/view/:id", Controller.findLaptop);
 app.patch("/update/:id", Controller.updateLaptop);
 // app.delete("/delete/:id", Controller.deleteLaptop);
 
-app.listen(3000, () => {
-  console.log("Server has started at port 8000");
+app.listen(PORT, () => {
+  console.log("Server has started at port ",PORT);
 });
 
 app.post("/scan", (req, res, next) => {
